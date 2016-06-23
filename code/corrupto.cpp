@@ -49,7 +49,7 @@ void wobble(char* bytes, int len, int count, int amount, int wobbleVersion){
 						bytes[i] /= bytes[i-amount];
 						break;
 					default:
-						cout << "Program Error";
+						cout << "\e[1mProgram Error\e[0m" << endl;
 				}
 			}
 		}else{
@@ -75,8 +75,13 @@ void shift(char* bytes, int len, int count, int amount, int shiftVersion){
 						bytes[i+amount] = bytes[i];
 						bytes[i] = tempByte;
 						break;
+					case 1:
+						tempByte = bytes[i-amount];
+						bytes[i-amount] = bytes[i];
+						bytes[i] = tempByte;
+						break;
 					default:
-						cout << "Program Error";
+						cout << "\e[1mProgram Error\e[0m" << endl;
 				}
 			}
 		}else{
@@ -102,7 +107,7 @@ void adjust(char* bytes, int len, int count, int amount, int adjustVersion){
 					bytes[i] /= amount;
 					break;
 				default:
-					cout << "Program Error";
+					cout << "\e[1mProgram Error\e[0m" << endl;
 			}
 		}else{
 			currCounter++;
@@ -129,6 +134,8 @@ int main(int argc, char* argv[])
 	int length = (ifstream::pos_type) inStream.tellg(); //current stream position which is like the end of file so length is pos
 
 	int corrCounter = length/everyNth; //real everynth so actually tricking user, TODO: stop tricking user
+	//TODO: add corrCounter options: divide ( current option ), normal ( corrCounter = everyNth ), random ( corrCounter = random(0,everyNth) ),
+	//(give better names) random2 ( if currCounter >= count then currCounter = random(0,everyNth) )
 
 	char *fileBytes = new char[length]; //create char array for file bytes
 
@@ -139,7 +146,6 @@ int main(int argc, char* argv[])
 
 	//apply correct corruption
 	if ( ((string)argv[3]).find("wobble") != string::npos ){
-
 		int version = 0;
 		if (!( ((string)argv[3]).substr(6,2) == "" )){
 			version = stoi( ((string)argv[3]).substr(6,2), &sz );
@@ -161,7 +167,7 @@ int main(int argc, char* argv[])
 
 		adjust(fileBytes, length, corrCounter, changeAmount, version);
 	}else{
-		cout << "Invalid Setting" << endl;
+		cout << "\e[1mProgram Error\e[0m" << endl;
 		return 0;
 	}
 

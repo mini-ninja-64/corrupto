@@ -31,4 +31,6 @@ To denote an option preface it with the following:
 * -o: Output file
 * -s: Corruption method
 * -n: Every nth along
--a: Amount of corruption
+* -a: Amount of corruption
+
+To see the full list of options and corruption settings visit the wiki

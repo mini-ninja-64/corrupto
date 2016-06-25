@@ -1,25 +1,22 @@
 # corrupto
 Command line corruptor written in C++
 
-How to use:
+#### How to setup:
 
-executable infile outfile setting everyByte changeAmount
+Linux: g++ corrupto.cpp -o corrupto (if it does not compile try using C++11 as standard libray).
 
-settings:
+OS X: Install brew, install g++ same as linux (may make a brew package for corrupto in the future)
 
-wobble0-7:
-    Too many too explain, take a look at the wobble function
+Windows: I guess you use cygwin, but I have not tested it.
 
-shift0-1:
-    0:
-      everyByte along swap with everyByte Index + changeAmount
-    1:
-      everyByte along swap with everyByte Index - changeAmount
+#### How to use:
+```
+corrupto options
+```
+(if you don't add it to the system path then you will need to call ./corrupto options)
 
-adjust0-3:
-    0:
-      everyByte along + changeAmount (no - because you can just +-)
-    1:
-      everyByte along * changeAmount
-    2:
-      everyByte along / changeAmount
+The minimum required options for corruption are:
+
+File to corrupt, Corrupted output, Corruption method, Every nth along, Amount of corruption
+
+File To Co

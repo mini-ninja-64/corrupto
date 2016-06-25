@@ -1,5 +1,5 @@
 # corrupto
-Command line corruptor written in C++
+Command line file corruptor written in C++
 
 #### How to setup:
 
@@ -17,6 +17,12 @@ corrupto options
 
 The minimum required options for corruption are:
 
-File to corrupt, Corrupted output, Corruption method, Every nth along, Amount of corruption
+Input file, Output file, Corruption method, Every nth along, Amount of corruption
 
-File To Co
+To denote an option preface it with the following:
+
+-i: Input file
+-o: Output file
+-s: Corruption method
+-n: Every nth along
+-a: Amount of corruption

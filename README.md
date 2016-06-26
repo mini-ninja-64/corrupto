@@ -11,9 +11,11 @@ I made this because I like corrupting files and seeing what happens, this is esp
 
 bear.jpg
 
-![bear](http://url/to/img.png)
+![bear](https://raw.githubusercontent.com/mini-ninja-64/corrupto/experimental/examples/images/bear/bear.jpg)
+
 after applying ```corrupto -i bear.jpg -o bearCorr.jpg -s wobble0 -n 1600 -a 5``` I got:
-![bear corrupted](http://url/to/img.png)
+
+![bear corrupted](https://raw.githubusercontent.com/mini-ninja-64/corrupto/experimental/examples/images/bear/bearCorr.jpg)
 
 
 

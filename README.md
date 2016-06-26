@@ -7,6 +7,16 @@ I made this because I like corrupting files and seeing what happens, this is esp
 
 #### Examples:
 
+###### Images:
+
+bear.jpg
+
+![bear](http://url/to/img.png)
+after applying ```corrupto -i bear.jpg -o bearCorr.jpg -s wobble0 -n 1600 -a 5``` I got:
+![bear corrupted](http://url/to/img.png)
+
+
+
 #### How to setup:
 
 Linux: ```g++ corrupto.cpp -o corrupto``` (if it does not compile try using C++11 as standard libray).

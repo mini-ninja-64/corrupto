@@ -13,11 +13,19 @@ bear.jpg
 
 ![bear](https://raw.githubusercontent.com/mini-ninja-64/corrupto/experimental/examples/images/bear/bear.jpg)
 
-after applying ```corrupto -i bear.jpg -o bearCorr.jpg -s wobble0 -n 1600 -a 5``` I got:
+After applying ```corrupto -i bear.jpg -o bearCorr.jpg -s wobble0 -n 1600 -a 5``` I got:
 
 ![bear corrupted](https://raw.githubusercontent.com/mini-ninja-64/corrupto/experimental/examples/images/bear/bearCorr.jpg)
 
+###### Roms:
 
+Super Mario Bros.nes
+
+img1
+
+After applying ```corrupto -i Super Mario Bros.nes -o Super Mario Bros Corrupt.nes -s wobble2 -n 16 -a 1 -x divide``` I got:
+
+img2
 
 #### How to setup:
 

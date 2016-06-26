@@ -25,7 +25,7 @@ Super Mario Bros.nes
 
 After applying ```corrupto -i Super Mario Bros.nes -o Super Mario Bros Corrupt.nes -s wobble2 -n 16 -a 1 -x divide``` I got:
 
-![mario](https://raw.githubusercontent.com/mini-ninja-64/corrupto/experimental/examples/roms/mario1/mariosCorr.png)
+![mario](https://raw.githubusercontent.com/mini-ninja-64/corrupto/experimental/examples/roms/mario1/marioCorr.png)
 
 #### How to setup:
 

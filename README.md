@@ -1,25 +1,56 @@
 # corrupto
-Command line corruptor written in C++
+Command line file corruptor written in C++
 
-How to use:
+#### Why?:
 
-executable infile outfile setting everyByte changeAmount
+I made this because I like corrupting files and seeing what happens, this is especially fun in old videogame roms and videos. I decided to make my own after a gif I was making got messed up by imagemagick and I wanted to see if could recreate the effect programmatically.
 
-settings:
+#### Examples:
 
-wobble0-7:
-    Too many too explain, take a look at the wobble function
+###### Images:
 
-shift0-1:
-    0:
-      everyByte along swap with everyByte Index + changeAmount
-    1:
-      everyByte along swap with everyByte Index - changeAmount
+bear.jpg
 
-adjust0-3:
-    0:
-      everyByte along + changeAmount (no - because you can just +-)
-    1:
-      everyByte along * changeAmount
-    2:
-      everyByte along / changeAmount
+![bear](https://raw.githubusercontent.com/mini-ninja-64/corrupto/experimental/examples/images/bear/bear.jpg)
+
+After applying ```corrupto -i bear.jpg -o bearCorr.jpg -s wobble0 -n 1600 -a 5``` I got:
+
+![bear corrupted](https://raw.githubusercontent.com/mini-ninja-64/corrupto/experimental/examples/images/bear/bearCorr.jpg)
+
+###### Roms:
+
+Super Mario Bros.nes
+
+![mario](https://raw.githubusercontent.com/mini-ninja-64/corrupto/experimental/examples/roms/mario1/mariosStd.png)
+
+After applying ```corrupto -i Super Mario Bros.nes -o Super Mario Bros Corrupt.nes -s wobble2 -n 16 -a 1 -x divide``` I got:
+
+![mario](https://raw.githubusercontent.com/mini-ninja-64/corrupto/experimental/examples/roms/mario1/marioCorr.png)
+
+#### How to setup:
+
+Linux: ```g++ corrupto.cpp -o corrupto``` (if it does not compile try using C++11 as standard libray).
+
+OS X: Install brew, install g++, same as linux (may make a brew package for corrupto in the future)
+
+Windows: I guess you use cygwin, but I have not tested it.
+
+#### How to use:
+```
+corrupto options
+```
+(if you don't add it to the system path then you will need to call ./corrupto options)
+
+The minimum required options for corruption are:
+
+Input file, Output file, Corruption method, Every nth along, Amount of corruption
+
+To denote an option preface it with the following:
+
+* -i: Input file
+* -o: Output file
+* -s: Corruption method
+* -n: Every nth along
+* -a: Amount of corruption
+
+To see the full list of options and corruption settings visit the wiki

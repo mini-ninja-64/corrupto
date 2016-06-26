@@ -1,0 +1,1 @@
+corrupto -i Super Mario Bros.nes -o Super Mario Bros Corrupt.nes -s wobble2 -n 16 -a 1 -x divide

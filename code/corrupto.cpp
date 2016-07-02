@@ -250,7 +250,6 @@ int main(int argc, char* argv[])
 		exit(EXIT_FAILURE);
 	}
 
-	cout << "TEST" << endl;
 
 	ifstream inStream(in, ios::binary|ios::ate); //open file stream
 	int length = (ifstream::pos_type) inStream.tellg(); //current stream position which is like the end of file so length is pos
@@ -272,7 +271,6 @@ int main(int argc, char* argv[])
 
 	inStream.close(); //close file as we adjust array as we dont need it anymore
 
-	cout << "TEST2" << endl;
 
 	//apply correct corruption
 	if ( setting.find("wobble") != string::npos ){
@@ -308,27 +306,22 @@ int main(int argc, char* argv[])
 			exit(EXIT_FAILURE);
 		}
 
-		cout << "SUBTEST1" << endl;
 		cout << in2 << endl;
 		ifstream inStream2(in2, ios::binary|ios::ate);
-		cout << "SUBTEST2" << endl;
+		
 		int length2 = (ifstream::pos_type) inStream2.tellg();
-		cout << "SUBTEST3" << endl;
+
 		cout << length2 << endl;
 
 		char *fileBytes2 = new char[length2]; //create char array for file bytes
-		cout << "SUBTEST4" << endl;
+
 
 		inStream2.seekg(0, ios::beg);
-		cout << "SUBTEST5" << endl;
+
 		inStream2.read(fileBytes2, length2); //read file bytes into char array
-		cout << "SUBTEST6" << endl;
+
 
 		inStream2.close(); //close file as we adjust array as we dont need it anymore
-		cout << "SUBTEST7" << endl;
-
-
-		
 
 		fswap(fileBytes, fileBytes2, length, length2, corrCounter, changeAmount, version);
 	}else{
@@ -336,7 +329,6 @@ int main(int argc, char* argv[])
 		return 0;
 	}
 
-	cout << "TEST3" << endl;
 
 	//info
 
@@ -345,8 +337,6 @@ int main(int argc, char* argv[])
 	if (!(randomEveryTime)){ cout << ", everyNth: " << everyNth; }
 
 	cout << ", changeAmount: " << changeAmount << endl;
-
-	cout << " WAGAMAMA " << corrCounter << endl;
 
 	cout << "length: " << length << endl;
 
